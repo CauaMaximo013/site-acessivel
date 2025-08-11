@@ -28,6 +28,14 @@ section {
     font-weight: 600;
 }
 
+.hydrosfera {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 .inicio-fundo {
     /* aula 3 */
     background-image: url('img/oceano.jpg');
