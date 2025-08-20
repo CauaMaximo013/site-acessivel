@@ -1,133 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Tropicália</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrosfera</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon16.icon">
 </head>
 
 <body>
-    <header class=" p-5">
-        <nav class="container d-flex justify-content-between align-items-center" >
-            <h1 class="display-4 fw-bold hydrosfera">Hydrosfera</h1>
-            <ul class="nav mt-5">
-                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>
-            <div id="acessibilidade" class="menu-acessibilidade"> 
-                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
-                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
-                    <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
-                    <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
-                    <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"> <i class="bi bi-shadows"></i></button>         
+    <header>
+        <nav class="container">
+            <a href="#" class="brand">
+                <div class="logo"></div>
+                <strong>Hydrosfera</strong>
+            </a>
+            <div class="navlinks">
+                <a href="#about">Sobre</a>
+                <a href="#facts">Curiosidades</a>
+                <a href="#gallery">Galeria</a>
+                <!-- Botão de Configurações -->
+                <div class="config-menu">
+                    <button id="configToggle">⚙️</button>
+                    <div class="config-panel" id="configPanel">
+                        <button id="toggleTheme">🌙/☀️ Alternar Tema</button>
+                        <div class="zoom-controls">
+                            <button id="zoomOut">➖</button>
+                            <button id="zoomReset">🔄</button>
+                            <button id="zoomIn">➕</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
-       
     </header>
 
 
-    <main class="container my-5">
-
-        <section id="inicio" class="my-5">
-            <div class="inicio-fundo d-flex justify-content-between align-items-center">
-                <div class="esquerda-conteudo">
-                    <h1 class="display-4 text-white fst-italic fw-bold">Conheça mais o Oceano!</h1>
-                    <h1 class="display-4 text-white fst-italic fw-bold">Hydrosfera</h1>
-                    <!-- <img src="img/logo-2.png" class="mb-3" width="563"
-                        height="278" loading="lazy"> -->
-                    <a href="#tropicalia"
-                        class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero
-                        conhecer!</a>
-                </div>
-                <!-- <img src="img/navio.png" alt="A imagem apresenta um navio onde acontecem passeios ao oceano" title="Os mutantes - CC0 Domínio Público / Acervo Arquivo Nacional" class="img-fluid img-inicio"> -->
-              </div>
-        </section>
-
-        <section id="tropicalia" class="my-5 pt-6 secao-tropicalia" tabindex="0" aria-label="Seção explicativa sobre a tropicália">
-            <div class="container d-flex align-items-center ">
-                <div class="col-4 d-flex justify-content-center ">
-                    <img src="img/cardume.jpg" class="rounded-pill" width="273" height="331" loading="lazy">
-                </div>
-                <div class="col-5">
-                    <h2>Você sabia?</h2>
-                    <p class="p-2">O oceano cobre mais de 70% da superfície do planeta e é responsável por produzir cerca de 50% do oxigênio que respiramos. Ainda assim, menos de 5% dele foi explorado.</p>
-                </div>
+    <!-- Hero com Parallax -->
+    <div class="parallax">
+        <div class="layer">
+            <img src="img/oceano.jpg" alt="Fundo oceano">
+        </div>
+        <div class="overlay"></div>
+        <section class="hero container">
+            <div>
+                <h1>Explore o Oceano</h1>
+                <p>Beleza, mistério e vida em cada onda.</p>
+                <a href="#about" class="btn">Descobrir</a>
             </div>
         </section>
+    </div>
 
-        <section id="galeria" tabindex="0" aria-label="Seção de galeria de imagens">
-            <h2 class="text-center pt-5">Galeria</h2>
-            <div class="container p-3 mt-3 fundo-galeria ">
+    <!-- Sobre -->
+    <section id="about" class="about container">
+        <div class="panel card">
+            <h2>Sobre o Oceano</h2>
+            <p>O oceano cobre mais de 70% da Terra e abriga a maior parte da biodiversidade do planeta.</p>
+            <p>Ele regula o clima, fornece oxigênio e recursos essenciais para a vida.</p>
+        </div>
+        <div class="panel card">
+            <img src="img/oceano2.jpg" alt="Vida marinha" style="width:100%; border-radius:1rem;">
+        </div>
+    </section>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Jorge_Ben_e_o_Trio_Mocotó_no_Teatro_da_Lagoa,_1971.tif.jpg"
-                            class="img-fluid rounded-5" loading="lazy">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Os_Mutantes_2.tif.jpg" class="img-fluid rounded-5"
-                            loading="lazy">
-                    </div>
-                </div>
-                <div class="row mt-4  justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Gilberto_Gil_nos_anos_1960.tif.jpg" class="img-fluid rounded-5" loading="lazy">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Caetano_Veloso_no_III_Festival_da_Música_Popular.tif.jpg"
-                            class="img-fluid rounded-5" loading="lazy">
-                    </div>
-                </div>
-             </div>
-        </section>
+    <!-- Curiosidades -->
+    <section id="facts" class="facts container grid">
+        <div class="fact card">
+            <h3>97%</h3>
+            <p>da água da Terra está nos oceanos.</p>
+        </div>
+        <div class="fact card">
+            <h3>200.000+</h3>
+            <p>espécies marinhas já catalogadas.</p>
+        </div>
+        <div class="fact card">
+            <h3>11 km</h3>
+            <p>é a profundidade da Fossa das Marianas.</p>
+        </div>
+    </section>
 
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
-                    <h2 class="mb-3">Entre em contato</h2>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1"
-                                placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1"
-                                placeholder="Digite seu email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4"
-                                placeholder="Escreva sua mensagem"></textarea>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar
-                                mensagem</button>
-                        </div>
-                    </form>
-                </div>
+    <!-- Galeria -->
+    <section id="gallery" class="gallery container grid">
+        <div class="tile card">
+            <div class="img" style="background-image:url('img/oceano3.jpg')"></div>
+            <div class="shade"></div>
+            <div class="txt">
+                <h3>Corais</h3>
             </div>
-        </section>
-    </main>
-    <footer class="text-center p-3 fst-italic">
-        <p>Acesse nossas redes:</p>
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-tiktok"></i>
-        <p class="mt-3">Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
+        </div>
+        <div class="tile card">
+            <div class="img" style="background-image:url('img/oceano4.jpg')"></div>
+            <div class="shade"></div>
+            <div class="txt">
+                <h3>Tubarões</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta container">
+        <div class="block card">
+            <h2>Ajude a proteger o oceano</h2>
+            <p class="muted">Cada ação conta. Reduza plásticos e apoie a vida marinha.</p>
+            <a href="#" class="btn">Saiba mais</a>
+        </div>
+        <div class="block card">
+            <img src="img/oceano5.jpg" alt="Proteção oceano" style="width:100%; border-radius:1rem;">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Hydrosfera. Desenvolvido por
+            <a href="https://github.com/ArthurL244"
+                target="_blank" rel="noopener noreferrer">Arthur Lemos,
+            <a href="https://github.com/AlunoBrayan"
+                target="_blank" rel="noopener noreferrer">Brayan Daniel,
+            <a href="https://github.com/CauaMaximo013"
+                target="_blank" rel="noopener noreferrer">Cauã Máximo e
+            <a href="https://github.com/AlunaGabriela"
+                target="_blank" rel="noopener noreferrer">Gabriella Fernanda.
+        </p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
+
     <script src="script.js"></script>
-  
 </body>
 
 </html>

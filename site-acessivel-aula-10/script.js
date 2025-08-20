@@ -1,43 +1,49 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
-    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
- 
-    botaoDeAcessibilidade.addEventListener('click', function (){
-     botaoDeAcessibilidade.classList.toggle('rotacao-botao');
-     opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
- 
-     const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
-     botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
-   
-    })
- 
-     const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-     const diminuiFonteBotao = document.getElementById('diminuir-fonte');
-     
-     const alternaContraste = document.getElementById('alterna-contraste')
- 
-     let tamanhoAtualFonte = 1;
- 
-     aumentaFonteBotao.addEventListener('click', function(){
-         tamanhoAtualFonte += 0.1;
-         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
- 
-     })
- 
-     diminuiFonteBotao.addEventListener('click', function(){
-         tamanhoAtualFonte -= 0.1;
-         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
- 
-     })
- 
-     alternaContraste.addEventListener('click', function(){
-         document.body.classList.toggle('alto-contraste')
-     })
- 
- 
- })
- 
- ScrollReveal().reveal('#inicio', { delay: 500 });
- ScrollReveal().reveal('#tropicalia', { delay: 500 });
- ScrollReveal().reveal('#galeria', { delay: 500 });
- ScrollReveal().reveal('#contato', { delay: 500 });
+// efeito parallax
+document.addEventListener("scroll", () => {
+  const layers = document.querySelectorAll(".layer img");
+  let scrollTop = window.pageYOffset;
+
+  layers.forEach((layer) => {
+    let speed = 0.3;
+    layer.style.transform = `translateY(${scrollTop * speed}px) scale(1.2)`;
+  });
+});
+
+// Abrir/fechar painel de configurações
+const configToggle = document.getElementById("configToggle");
+const configPanel = document.getElementById("configPanel");
+
+configToggle.addEventListener("click", () => {
+  configPanel.style.display =
+    configPanel.style.display === "flex" ? "none" : "flex";
+});
+
+// Alternar tema claro/escuro
+const toggleBtn = document.getElementById("toggleTheme");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+});
+
+// Zoom
+let scale = 1;
+const zoomInBtn = document.getElementById("zoomIn");
+const zoomOutBtn = document.getElementById("zoomOut");
+const zoomResetBtn = document.getElementById("zoomReset");
+
+zoomInBtn.addEventListener("click", () => {
+  scale += 0.1;
+  document.body.style.transform = `scale(${scale})`;
+  document.body.style.transformOrigin = "top center";
+});
+
+zoomOutBtn.addEventListener("click", () => {
+  scale -= 0.1;
+  if (scale < 0.5) scale = 0.5;
+  document.body.style.transform = `scale(${scale})`;
+  document.body.style.transformOrigin = "top center";
+});
+
+zoomResetBtn.addEventListener("click", () => {
+  scale = 1;
+  document.body.style.transform = "scale(1)";
+});
